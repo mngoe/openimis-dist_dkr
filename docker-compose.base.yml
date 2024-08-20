@@ -32,7 +32,7 @@ services:
       context: ../openimis-fe_js/
       args:
         OPENIMIS_CONF_JSON: ${OPENIMIS_FE_CONF_JSON}
-    image: openimis/frontend:${PROJECT_NAME:-local}
+    #image: openimis/frontend:${PROJECT_NAME:-local}
     restart: always
     environment:
       - REACT_APP_API_URL=api
