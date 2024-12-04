@@ -4,6 +4,10 @@ include:
     env_file: .env.dev
   - path: docker-compose.base.dev.yml
     env_file: .env.dev
+  - path: compose.cache.yml
+    env_file: 
+     - .env.dev
+     - .env.redis
   # - path: docker-compose.openSearch.yml
   #   env_file: 
   #    - .env.dev
