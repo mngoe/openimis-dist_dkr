@@ -29,6 +29,9 @@ x-api: &default-api
     - DJANGO_MIGRATE=${DJANGO_MIGRATE:-True}
     - SCHEDULER_AUTOSTART=${SCHEDULER_AUTOSTART:-True}
     - MODE=${MODE:-Prod}
+    - ASYNC=${ASYNC:-PROD}
+    - CACHE_OBJECT_DEFAULT=${CACHE_OBJECT_DEFAULT:-true}
+    - CACHE_OBJECT_TTL=${CACHE_OBJECT_TTL:-3600}
   networks:
     openimis-net-dev:
   restart: always
