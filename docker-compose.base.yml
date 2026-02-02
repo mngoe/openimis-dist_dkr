@@ -9,7 +9,7 @@ x-api: &default-api
     - DB_PASSWORD=${DB_PASSWORD}
     - SITE_ROOT=api
     - SITE_URL=${DOMAIN}
-    - CELERY_BROKER_URL=amqp://rabbitmq
+    - CELERY_BROKER_URL=amqp://rabbitmq-test
     - DB_ENGINE=${DB_ENGINE}
     - MODE=${MODE:-Prod}
   volumes:
@@ -62,7 +62,7 @@ services:
     <<: *default-api
     container_name: ${PROJECT_NAME:-openimis}-worker
     command: worker
-  rabbitmq:
+  rabbitmq-test:
     container_name: ${PROJECT_NAME:-openimis}-rabbitmq
     image: rabbitmq:3-management
     restart: always
