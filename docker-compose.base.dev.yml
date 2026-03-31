@@ -30,8 +30,13 @@ x-api: &default-api
 
 services:
   frontend:
-    container_name: ${PROJECT_NAME:-openimis}-frontend
-    image: ghcr.io/openimis/openimis-fe:${FE_TAG:-develop}
+    container_name: ${PROJECT_NAME:-openimis}-frontendse
+    build:
+      context: ../openimis-fe_js/
+      args:
+        OPENIMIS_CONF_JSON: ${OPENIMIS_FE_CONF_JSON}
+      # image: openimis/frontend:${PROJECT_NAME:-local}
+    # image: ghcr.io/openimis/openimis-fe:${FE_TAG:-develop}
     restart: always
     environment:
       - REACT_APP_API_URL=api
@@ -48,7 +53,7 @@ services:
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
       - ./data/certbot/www:/var/www/certbot
-      # - ../openimis-fe-insuree_js:/conf/openimis-fe-insuree_js
+      - ../openimis-fe-insuree_js:/conf/openimis-fe-insuree_js
       # - ../openimis-fe-policy_js:/conf/openimis-fe-policy_js
       # - ../openimis-fe-contribution_js_js:/conf/openimis-fe-contribution_js
       - ../openimis-fe_js:/conf/openimis-fe_js
