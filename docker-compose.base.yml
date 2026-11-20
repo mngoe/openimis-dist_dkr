@@ -8,6 +8,7 @@ x-api: &default-api
     - ../openimis-be-cs_py:/openimis-be-cs_py
     - ../openimis-be-csu_py:/openimis-be-csu_py
     - ../openimis-be-report-csu_py:/openimis-be-report-csu_py
+    - ../openimis-be-medical_controller_py:/openimis-be-medical_controller_py
     - ../openimis-be-report-cs_py:/openimis-be-report-cs_py
     - ../openimis-be-program_py:/openimis-be-program_py
     #- ../openimis-be-idps_py:/openimis-be-idps_py
