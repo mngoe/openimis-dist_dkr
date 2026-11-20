@@ -10,6 +10,7 @@ x-api: &default-api
     - ../openimis-be_py:/openimis-be
     - ../openimis-be-core_py:/openimis-be-core_py
     - ../openimis-be-claim_py:/openimis-be-claim_py
+    - ../openimis-be-medical_controller_py:/openimis-be-medical_controller_py
     - ../openimis-be-location_py:/openimis-be-location_py
     - ../openimis-be-cs_py:/openimis-be-cs_py
     - ../openimis-be-csu_py:/openimis-be-csu_py
